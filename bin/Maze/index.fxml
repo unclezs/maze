@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="917.0" prefWidth="1104.0" style="-fx-max-width: 1104; -fx-min-width: 1104; -fx-max-height: 917; -fx-min-height: 917;" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Maze.Control">
+   <children>
+      <TextField fx:id="width" layoutX="107.0" layoutY="46.0" style="-fx-border-radius: 25; -fx-background-radius: 25;" text="21" />
+      <TextField fx:id="height" layoutX="336.0" layoutY="47.0" style="-fx-background-radius: 25;" text="21" />
+      <Text layoutX="81.0" layoutY="62.0" strokeType="OUTSIDE" strokeWidth="0.0" text="宽" />
+      <Text layoutX="311.0" layoutY="64.0" strokeType="OUTSIDE" strokeWidth="0.0" text="高" />
+      <Button fx:id="creat" layoutX="521.0" layoutY="48.0" mnemonicParsing="false" onAction="#controlCreat" prefHeight="23.0" prefWidth="60.0" style="-fx-background-color: #9b4400; -fx-background-radius: 5;" text="生成" textFill="#f8f1f1" />
+      <Pane fx:id="MazeBox" layoutX="16.0" layoutY="88.0" prefHeight="800" prefWidth="800.0" />
+      <Button fx:id="findonepath" layoutX="904.0" layoutY="119.0" mnemonicParsing="false" onAction="#controlFind" prefHeight="39.0" prefWidth="105.0" style="-fx-background-color: #9b4400; -fx-border-radius: 25; -fx-background-radius: 25;" text="寻找出路" textFill="#f8f6f6">
+         <font>
+            <Font size="17.0" />
+         </font></Button>
+      <TextField fx:id="Sx" layoutX="663.0" layoutY="48.0" prefHeight="23.0" prefWidth="40.0" text="1" />
+      <TextField fx:id="Sy" layoutX="718.0" layoutY="48.0" prefHeight="23.0" prefWidth="40.0" text="1" />
+      <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Text" />
+      <Text layoutX="605.0" layoutY="63.0" strokeType="OUTSIDE" strokeWidth="0.0" text="起点坐标" />
+      <Text layoutX="800.0" layoutY="64.0" strokeType="OUTSIDE" strokeWidth="0.0" text="终点坐标" />
+      <TextField fx:id="Ex" layoutX="861.0" layoutY="47.0" prefHeight="23.0" prefWidth="40.0" text="19" />
+      <TextField fx:id="Ey" layoutX="916.0" layoutY="47.0" prefHeight="23.0" prefWidth="40.0" text="19" />
+      <Text layoutX="679.0" layoutY="44.0" strokeType="OUTSIDE" strokeWidth="0.0" text="X" />
+      <Text layoutX="738.0" layoutY="44.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Y" />
+      <Text layoutX="877.0" layoutY="44.0" strokeType="OUTSIDE" strokeWidth="0.0" text="X" />
+      <Text layoutX="932.0" layoutY="44.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Y" />
+      <TextField fx:id="cx" layoutX="984.0" layoutY="47.0" prefHeight="23.0" prefWidth="48.0" text="x" />
+      <TextField fx:id="cy" layoutX="1044.0" layoutY="47.0" prefHeight="23.0" prefWidth="48.0" text="y" />
+      <Text layoutX="996.0" layoutY="36.0" strokeType="OUTSIDE" strokeWidth="0.0" text="点击位置坐标" wrappingWidth="72.0" />
+      <Text layoutX="107.0" layoutY="28.0" strokeType="OUTSIDE" strokeWidth="0.0" text="提示：宽高一致且为奇数" wrappingWidth="150.0" />
+      <Text layoutX="871.0" layoutY="695.0" strokeType="OUTSIDE" strokeWidth="0.0" text="结果信息：" />
+      <Text fx:id="result" layoutX="950.0" layoutY="695.0" strokeType="OUTSIDE" strokeWidth="0.0" text="未运行" wrappingWidth="123.240234375" />
+      <Button fx:id="up" layoutX="929.0" layoutY="727.0" mnemonicParsing="false" onAction="#dirclick" prefHeight="46.0" prefWidth="55.0" style="-fx-background-color: #9b4400;" text="上" textFill="#fcf5f5" />
+      <Button fx:id="left" layoutX="857.0" layoutY="781.0" mnemonicParsing="false" onAction="#dirclick" prefHeight="46.0" prefWidth="55.0" style="-fx-background-color: #9b4400;" text="左" textFill="WHITE" />
+      <Button fx:id="right" layoutX="1004.0" layoutY="781.0" mnemonicParsing="false" onAction="#dirclick" prefHeight="46.0" prefWidth="55.0" style="-fx-background-color: #9b4400;" text="右" textFill="#f5f2f2" />
+      <Button fx:id="down" layoutX="930.0" layoutY="835.0" mnemonicParsing="false" onAction="#dirclick" prefHeight="46.0" prefWidth="55.0" style="-fx-background-color: #9b4400;" text="下" textFill="#eeeaea" />
+      <Button fx:id="creatM" layoutX="904.0" layoutY="184.0" mnemonicParsing="false" onAction="#creatMouse" prefHeight="39.0" prefWidth="105.0" style="-fx-background-color: #9b4400; -fx-background-radius: 25; -fx-border-radius: 25;" text="创建老鼠" textFill="#fffafa">
+         <font>
+            <Font size="17.0" />
+         </font></Button>
+      <Pane layoutX="836.0" layoutY="666.0" prefHeight="46.0" prefWidth="263.0" style="-fx-border-color: black;" />
+      <Button fx:id="dtxt" layoutX="905.0" layoutY="254.0" mnemonicParsing="false" onAction="#openFile" prefHeight="39.0" prefWidth="105.0" style="-fx-background-color: #994400; -fx-background-radius: 25;" text="导入迷宫" textFill="#f5f0f0">
+         <font>
+            <Font size="17.0" />
+         </font>
+      </Button>
+      <Button fx:id="stxt" layoutX="904.0" layoutY="324.0" mnemonicParsing="false" onAction="#SaveMaze" prefHeight="39.0" prefWidth="105.0" style="-fx-background-color: #9b4400; -fx-background-radius: 25;" text="保存迷宫" textFill="#fcf8f8">
+         <font>
+            <Font size="17.0" />
+         </font>
+      </Button>
+      <Button fx:id="travel" layoutX="905.0" layoutY="403.0" mnemonicParsing="false" onAction="#travelAll" prefHeight="39.0" prefWidth="105.0" style="-fx-background-color: #9b4400; -fx-background-radius: 25;" text="遍历迷宫" textFill="WHITE">
+         <font>
+            <Font size="17.0" />
+         </font>
+      </Button>
+      <Button fx:id="onestep" layoutX="904.0" layoutY="476.0" mnemonicParsing="false" onAction="#oneStepFindPath" prefHeight="39.0" prefWidth="105.0" style="-fx-background-color: #9b4400; -fx-background-radius: 25;" text="单步寻路" textFill="#fffefe">
+         <font>
+            <Font size="17.0" />
+         </font>
+      </Button>
+      <Button fx:id="first" layoutX="904.0" layoutY="608.0" mnemonicParsing="false" onAction="#first" prefHeight="39.0" prefWidth="105.0" style="-fx-background-color: #9b4400; -fx-background-radius: 25;" text="初始化" textFill="#fffefe">
+         <font>
+            <Font size="17.0" />
+         </font>
+      </Button>
+      <Button fx:id="shortpath" layoutX="904.0" layoutY="542.0" mnemonicParsing="false" onAction="#shortPath" prefHeight="39.0" prefWidth="105.0" style="-fx-background-color: #9b4400; -fx-background-radius: 25;" text="最短路经" textFill="WHITE">
+         <font>
+            <Font size="17.0" />
+         </font>
+      </Button>
+   </children>
+</Pane>
